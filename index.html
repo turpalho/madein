@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="madein">
+    <title>MadeIn</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="items-left">
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+        </div>
+        <div class="items-right">
+            <a href="#">bloog</a>
+            <a href="#">contact</a>
+        </div>
+    </div>
+    <div class="logo-container">
+        <h1 class="logo">MadeIn</h1>
+    </div>
+    <div class="container"></div>
+    <center>
+        <a name="about"></a>
+        <div class="about-company">
+            <h1>Made In</h1>
+            <h3>is a development company that specializes in creating cutting-edge technology solutions for businesses. From Telegram bots to mobile apps and websites, our team of experts leverages the latest tools and techniques to bring your ideas to life. With a focus on user-centered design and seamless functionality, we're dedicated to helping you drive success through technology.</h3>
+        </div>
+        <a name="projects"></a>
+        <div class="content">
+            <div class="post" id="arend">
+                <img src="images/arendakz2.jpg" alt="" class="post-img">
+                <div class="post-content">
+                    <h3>ArendaKz_bot - telegram bot for finding housing in Kazakhstan.
+                    </h3>
+                    <span class="date">#arenda</span>
+                </div>
+            </div>
+
+            <div class="post" id="azkr">
+                <img src="images/azkar.jpg" alt="" class="post-img">
+                <div class="post-content">
+                    <h3>Azkar - is a mobile application for reading azkars.
+                    </h3>
+                    <span class="date">#azkar</span>
+                </div>
+            </div>
+
+            <div class="post" id="excl">
+                <img src="images/exclusive.jpg" alt="" class="post-img">
+                <div class="post-content">
+                    <h3>Order_bot - a bot created for the "Exclusive" restaurant.
+                    </h3>
+                    <span class="date">#order</span>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        const text = baffle(".logo");
+        text.set({
+            characters: '▒▓░/█▒<░ <█░▓░ █▓▒ ░>▒▒░ ▒/░/ ▓>< ▒▒/█ ▒▒██',
+            speed:200
+        });
+        text.start();
+        text.reveal(20000);
+
+        ScrollTrigger.create({
+            animation: gsap.from(".logo",{
+                y: "50vh",
+                scale: 6,
+                yPercent: -50,
+            }),
+            scrub: true,
+            trigger: ".about-company",
+            start: "top bottom",
+            endTrigger: ".about-company",
+            end: "top center",
+        });
+
+        document.getElementById("arend").addEventListener("click", function() {
+            window.open("https://t.me/arrendakz_bot", "_blank");
+        });
+
+        document.getElementById("azkr").addEventListener("click", function() {
+            window.open("https://play.google.com/store/apps/details?id=com.shariba.azkar", "_blank");
+        });
+
+        document.getElementById("excl").addEventListener("click", function() {
+            window.open("https://t.me/exclusive_achkhoy_bot", "_blank");
+        });
+    </script>
+</body>
+</html>
