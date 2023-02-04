@@ -69,14 +69,6 @@
     </center>
 
     <script>
-        const text = baffle(".logo");
-        text.set({
-            characters: '▒▓░/█▒<░ <█░▓░ █▓▒ ░>▒▒░ ▒/░/ ▓>< ▒▒/█ ▒▒██',
-            speed:200
-        });
-        text.start();
-        text.reveal(20000);
-
         ScrollTrigger.create({
             animation: gsap.from(".logo",{
                 y: "50vh",
@@ -101,6 +93,14 @@
         document.getElementById("excl").addEventListener("click", function() {
             window.open("https://t.me/exclusive_achkhoy_bot", "_blank");
         });
+        
+        const text = baffle(".logo");
+        text.set({
+            characters: '▒▓░/█▒<░ <█░▓░ █▓▒ ░>▒▒░ ▒/░/ ▓>< ▒▒/█ ▒▒██',
+            speed:200
+        });
+        text.start();
+        text.reveal(20000);
     </script>
 </body>
 </html>
