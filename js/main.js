@@ -23,8 +23,8 @@ ScrollTrigger.create({
         yPercent: -50,
     }),
     scrub: true,
-    trigger: ".content",
+    trigger: ".about-company",
     start: "top bottom",
-    endTrigger: ".content",
+    endTrigger: ".about-company",
     end: "top center",
 });
