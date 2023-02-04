@@ -16,10 +16,19 @@ text.set({
 text.start();
 text.reveal(20000);
 
+let scaler = 6
+
+if (window.screen.width <= 1200 && window.screen.width >= 768) {
+    scaler = 4
+}
+else if(window.screen.width <= 767){
+    scaler = 2.5
+}
+
 ScrollTrigger.create({
     animation: gsap.from(".logo",{
         y: "50vh",
-        scale: 6,
+        scale: scaler,
         yPercent: -50,
     }),
     scrub: true,
